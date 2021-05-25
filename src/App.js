@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Count from "./components/Count";
+import Counter from "./components/Counter";
+import CounterProvider from "./components/CounterProvider";
+import CountProvider from "./components/CountProvider";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container mt-5">
+      <div className=" p-5 bg-primary mb-3 text-light">
+        <h1>Counter Using Context with useReducer and useState</h1>
+      </div>
+      <div className="row">
+        <CounterProvider>
+          <Counter />
+        </CounterProvider>
+        <CountProvider>
+          <Count />
+        </CountProvider>
+      </div>
     </div>
   );
 }
